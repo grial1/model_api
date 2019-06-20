@@ -6,7 +6,13 @@
 
 #pragma once
 
+#include <exception>
+#include <boost/python/object.hpp>
+#include <boost/python/import.hpp>
 #include "Dataset.h"
+
+namespace py = boost::python;
+using pyObject = py::object;
 
 namespace model_api
 {
@@ -19,16 +25,16 @@ namespace model_api
         public:
             InputDataset()=delete;                  ///< Delete default construtor
             ~InputDataset();                        ///< Destructor
-            InputDataset(const nda& oFM);           ///< Copy constructor
-            InputDataset(const nda&& oFM);          ///< Move constructor
-            void operator=(const nda& oFM);         ///< Copy assigment operator
-            void operator=(const nda&& oFM);        ///< Move assigment operator
+            InputDataset(nda& oFM);           ///< Copy constructor
+            InputDataset(nda&& oFM);          ///< Move constructor
+            void operator=(nda& oFM);         ///< Copy assigment operator
+            void operator=(nda&& oFM);        ///< Move assigment operator
             nda& getFileMatrix() const;             ///< Accessor method
             nda& getPredictions() const;            ///< Accessor method
-            void setFileMatrix(const nda& oFM);     ///< Mutator method
-            void setPredictions(const nda& oP);     ///< Mutator method
+            void setFileMatrix(nda& oFM);     ///< Mutator method
+            void setPredictions(nda& oP);     ///< Mutator method
             void predict();                         ///< Make prediction from filesmatrix
-            std::string& string() const;            ///< Convert to string
+            //std::string& string() const;            ///< Convert to string
 
     };
 

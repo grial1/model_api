@@ -25,15 +25,52 @@ namespace model_api
             virtual ~Dataset()=0;                   ///< Destructor
 
         protected:
-            Dataset(const nda& oFM);                        ///< Copy constructor
-            Dataset(const nda&& oFM);                       ///< Move constructor
-            virtual void operator=(const nda& oFM);         ///< Copy assigment operator
-            virtual void operator=(const nda&& oFM);        ///< Move assigment operator
-            virtual nda& getFileMatrix() const;             ///< Accessor method
-            virtual nda& getPredictions() const;            ///< Accessor method
-            virtual void setFileMatrix(const nda& oFM);     ///< Mutator method
-            virtual void setPredictions(const nda& oP);     ///< Mutator method
-            virtual std::string& string() const;                 ///< Convert to string
+            Dataset( nda& oFM );                        ///< Copy constructor
+            Dataset( nda&& oFM );                       ///< Move constructor
+            
+            virtual void operator=( nda& oFM )         ///< Copy assigment operator
+            {
+
+                this->oFilesMatrix = &oFM;
+
+            }
+            
+            virtual void operator=( nda&& oFM )        ///< Move assigment operator
+            {
+
+                this->oFilesMatrix = &oFM;
+
+            }
+
+            virtual nda& getFileMatrix() const             ///< Accessor method
+            {
+                
+                if( this->oFilesMatrix != nullptr )
+                    return *(this->oFilesMatrix);
+
+            }
+
+            virtual nda& getPredictions() const            ///< Accessor method
+            {
+
+                if( this->oFilesMatrix != nullptr )
+                    return *(this->oPredictions);
+
+            }
+
+            virtual void setFileMatrix( nda& oFM)     ///< Mutator method
+            {
+
+                this->oFilesMatrix = &oFM;
+
+            }
+
+            virtual void setPredictions( nda& oP)     ///< Mutator method
+            {
+
+                this->oPredictions = &oP;
+
+            }
 
         private:
             nda* oFilesMatrix = nullptr;                        ///< Bidimensional array associated with encoded log file
