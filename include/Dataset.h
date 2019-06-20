@@ -7,6 +7,7 @@
 #pragma once
 
 #include <string>
+#include <boost/python.hpp>
 #include <boost/python/numpy.hpp>
 
 namespace np = boost::python::numpy;

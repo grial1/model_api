@@ -60,6 +60,7 @@ void InputDataset::predict(){
         pyObject model = py::import("model");
         pyObject oModel = model.attr("Model");
         oModel.attr("setDataset")(this->getFileMatrix());
+        oModel.attr("train")();
         oModel.attr("predict")();
         nda oArr = np::array(oModel.attr("getPrediction")());
         this->setPredictions(oArr);
