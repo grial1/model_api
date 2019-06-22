@@ -26,13 +26,12 @@ namespace model_api
             virtual ~Dataset()=0;                   ///< Destructor
 
         protected:
-            Dataset( nda& oFM );                        ///< Copy constructor
-            Dataset( nda&& oFM );                       ///< Move constructor
+            Dataset( const nda& oFM );                        ///< Copy constructor
             
-            virtual void operator=( nda& oFM )         ///< Copy assigment operator
+            virtual void operator=( const nda& oFM )         ///< Copy assigment operator
             {
 
-                this->oFilesMatrix = &oFM;
+                this->oFilesMatrix = new nda(oFM);
 
             }
             

@@ -5,9 +5,7 @@
 
 using namespace model_api;
 
-Dataset::Dataset( nda& oFM ):oFilesMatrix{ &oFM }{}
-
-Dataset::Dataset( nda&& oFM ):oFilesMatrix{ &oFM }{}
+Dataset::Dataset( const nda& oFM ):oFilesMatrix{ new nda(oFM) }{}
 
 Dataset::~Dataset()
 {
