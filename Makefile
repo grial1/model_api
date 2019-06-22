@@ -25,6 +25,7 @@ $(PROG).bin: $(PROG).o
 
 clean:
 	rm -rf obj/*.o
+	rm -rf *.bin
 
 run:
 	./$(PROG).bin

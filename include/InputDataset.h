@@ -34,7 +34,10 @@ namespace model_api
             void setFileMatrix(nda& oFM);     ///< Mutator method
             void setPredictions(nda& oP);     ///< Mutator method
             void predict();                         ///< Make prediction from filesmatrix
-            //std::string& string() const;            ///< Convert to string
+            void initModel(const nda& oFMTrain,const nda& oPTrain);           ///< Initilize model and train, in case is neccessary
+    
+        private:
+            pyObject oModel;
 
     };
 

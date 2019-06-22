@@ -7,13 +7,48 @@ using namespace model_api;
 
 InputDataset::~InputDataset() {}                        ///< Destructor
 
-InputDataset::InputDataset( nda& oFM ) : Dataset{oFM} {}           ///< Copy constructor
+InputDataset::InputDataset( nda& oFM ) : Dataset{oFM} {
+
+    setenv("PYTHONPATH", ".", 1);   ///< Allow Python to load modules from the current directory
+    Py_Initialize();                ///< Initialize Python
+    
+    try
+    {
+    
+        pyObject model = py::import("model");
+        this->oModel = model.attr("Model");
+
+    } catch (const py::error_already_set& )
+    {
+
+        PyErr_Print();
+        throw std::runtime_error("Error when using Model");
+
+    }
+
+}           ///< Copy constructor
 
 InputDataset::InputDataset(nda&& oFM) : Dataset{oFM} {}          ///< Move constructor
 
 void InputDataset::operator=(nda& oFM) {
 
     Dataset::operator=(oFM);
+    setenv("PYTHONPATH", ".", 1);   ///< Allow Python to load modules from the current directory
+    Py_Initialize();                ///< Initialize Python
+    
+    try
+    {
+    
+        pyObject model = py::import("model");
+        this->oModel = model.attr("Model");
+
+    } catch (const py::error_already_set& )
+    {
+
+        PyErr_Print();
+        throw std::runtime_error("Error when using Model");
+
+    }
 
 }         ///< Copy assigment operator
 
@@ -57,11 +92,8 @@ void InputDataset::predict(){
     try
     {
 
-        pyObject model = py::import("model");
-        pyObject oModel = model.attr("Model");
-        oModel.attr("setDataset")(this->getFileMatrix());
-        oModel.attr("train")();
-        oModel.attr("predict")();
+        this->oModel.attr("setDataset")(this->getFileMatrix());
+        this->oModel.attr("predict")();
         nda oArr = np::array(oModel.attr("getPrediction")());
         this->setPredictions(oArr);
 
@@ -73,4 +105,25 @@ void InputDataset::predict(){
 
     }
 
-}                         ///< Make prediction from filesmatrix
+}
+
+void InputDataset::initModel(const nda& oFMTrain,const nda& oPTrain)
+{
+    setenv("PYTHONPATH", ".", 1);   ///< Allow Python to load modules from the current directory
+    Py_Initialize();                ///< Initialize Python
+    try
+    {
+
+        this->oModel.attr("setDataset")(oFMTrain);
+        this->oModel.attr("setPrediction")(oPTrain);
+        this->oModel.attr("train")();
+
+    } catch (const py::error_already_set& )
+    {
+
+        PyErr_Print();
+        throw std::runtime_error("Error when using Model");
+
+    }
+
+}
