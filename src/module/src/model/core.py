@@ -13,7 +13,7 @@ class Model:
         """ 
             Class constructor 
         """
-        self.model = KNeighborsClassifier(n_neighbors=10,\
+        self.model = KNeighborsClassifier(n_neighbors=1,\
                                                 weights="distance",\
                                                 algorithm="kd_tree",\
                                                 leaf_size=30,\

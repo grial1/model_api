@@ -12,7 +12,7 @@ Dataset::~Dataset()
 
     if(this->oFilesMatrix != nullptr)
         delete this->oFilesMatrix;
-    if(this->oPredictions != nullptr)
-        delete this->oPredictions;
+    //if(this->oPredictions != nullptr)
+    //    delete this->oPredictions;
 
 }

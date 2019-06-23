@@ -50,13 +50,13 @@ namespace model_api
 
             }
 
-            virtual nda& getPredictions() const            ///< Accessor method
-            {
-
-                if( this->oFilesMatrix != nullptr )
-                    return *(this->oPredictions);
-
-            }
+            //virtual nda& getPredictions() const            ///< Accessor method
+            //{
+//
+            //    if( this->oPredictions != nullptr )
+            //        return *(this->oPredictions);
+//
+            //}
 
             virtual void setFileMatrix( nda& oFM)     ///< Mutator method
             {
@@ -65,16 +65,16 @@ namespace model_api
 
             }
 
-            virtual void setPredictions( nda& oP)     ///< Mutator method
-            {
-
-                this->oPredictions = &oP;
-
-            }
+            //virtual void setPredictions( nda& oP)     ///< Mutator method
+            //{
+//
+            //    this->oPredictions = &oP;
+//
+            //}
 
         private:
             nda* oFilesMatrix = nullptr;                        ///< Bidimensional array associated with encoded log file
-            nda* oPredictions = nullptr;                        ///< Predictions on files
+            //nda* oPredictions = nullptr;                        ///< Predictions on files
     };
 
 };

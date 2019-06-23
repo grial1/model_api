@@ -16,7 +16,7 @@ InputDataset::InputDataset( nda& oFM ) : Dataset{oFM} {
     {
     
         pyObject model = py::import("model");
-        this->oModel = model.attr("Model");
+        this->oModel = model.attr("Model")();
 
     } catch (const py::error_already_set& )
     {
@@ -65,11 +65,11 @@ nda& InputDataset::getFileMatrix() const
 
 }             ///< Accessor method
         
-nda& InputDataset::getPredictions() const {
+//nda& InputDataset::getPredictions() const {
 
-    return Dataset::getPredictions();
+//    return Dataset::getPredictions();
 
-}            ///< Accessor method
+//}            ///< Accessor method
             
 void InputDataset::setFileMatrix(nda& oFM) {
 
@@ -77,14 +77,14 @@ void InputDataset::setFileMatrix(nda& oFM) {
 
 }     ///< Mutator method
 
-void InputDataset::setPredictions(nda& oP)
-{
-
-    Dataset::setPredictions(oP);
-
-}     ///< Mutator method
+//void InputDataset::setPredictions(nda& oP)
+//{
+//
+//    Dataset::setPredictions(oP);
+//
+//}     ///< Mutator method
         
-void InputDataset::predict(){
+void InputDataset::predict(nda& out){
 
     setenv("PYTHONPATH", ".", 1);   ///< Allow Python to load modules from the current directory
     Py_Initialize();                ///< Initialize Python
@@ -95,7 +95,7 @@ void InputDataset::predict(){
         this->oModel.attr("setDataset")(this->getFileMatrix());
         this->oModel.attr("predict")();
         nda oArr = np::array(oModel.attr("getPrediction")());
-        this->setPredictions(oArr);
+        out = oArr;
 
     } catch (const py::error_already_set& )
     {
@@ -111,6 +111,7 @@ void InputDataset::initModel(const nda& oFMTrain,const nda& oPTrain)
 {
     setenv("PYTHONPATH", ".", 1);   ///< Allow Python to load modules from the current directory
     Py_Initialize();                ///< Initialize Python
+
     try
     {
 

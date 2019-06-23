@@ -1,4 +1,5 @@
 PROG=example
+TEST=debug
 OBJECTS=Dataset.o InputDataset.o
 
 INCLUDE= -Iinclude/ -I/usr/include/python3.6m/
@@ -12,10 +13,10 @@ CXX=g++
 all: $(OBJECTS) $(PROG).o $(PROG).bin
 
 Dataset.o:
-	$(CXX) -g -c -o obj/$@ src/Dataset.cc $(CXXFLAGS)
+	$(CXX) -c -o obj/$@ src/Dataset.cc $(CXXFLAGS)
 
 InputDataset.o: 
-	$(CXX) -g -c -o obj/$@ src/InputDataset.cc $(CXXFLAGS)
+	$(CXX) -c -o obj/$@ src/InputDataset.cc $(CXXFLAGS)
 
 $(PROG).o:$(PROG).cc
 	$(CXX) -c -o obj/$@ src/$< $(CXXFLAGS)
@@ -30,18 +31,11 @@ clean:
 run:
 	./$(PROG).bin
 
-debug:$(PROG).cc
+$(TEST):$(PROG).cc
+	$(CXX) -g -c -o obj/Dataset.o src/Dataset.cc $(CXXFLAGS)
+	$(CXX) -g -c -o obj/InputDataset.o src/InputDataset.cc $(CXXFLAGS)
 	$(CXX) -g -o $@.bin src/$< obj/Dataset.o obj/InputDataset.o $(LIB) $(CXXFLAGS)
-	gdb ./debug.bin
+	gdb ./$(TEST).bin
 
 clean_debug:
-	rm -rf debug.bin
-	#rm -rf $(TEST).bin
-
-#test:$(TEST).bin run_test
-	
-#$(TEST).bin:$(TEST).cc
-	#$(CXX) -o $@ src/$< $(CATCH_INCLUDE)
-
-#run_test:$(TEST).bin
-#	./$<
+	rm -rf $(TEST).bin

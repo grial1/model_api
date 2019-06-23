@@ -30,10 +30,10 @@ namespace model_api
             void operator=(nda& oFM);         ///< Copy assigment operator
             void operator=(nda&& oFM);        ///< Move assigment operator
             nda& getFileMatrix() const;             ///< Accessor method
-            nda& getPredictions() const;            ///< Accessor method
+            //nda& getPredictions() const;            ///< Accessor method
             void setFileMatrix(nda& oFM);     ///< Mutator method
-            void setPredictions(nda& oP);     ///< Mutator method
-            void predict();                         ///< Make prediction from filesmatrix
+            //void setPredictions(nda& oP);     ///< Mutator method
+            void predict(nda& out);                         ///< Make prediction from filesmatrix
             void initModel(const nda& oFMTrain,const nda& oPTrain);           ///< Initilize model and train, in case is neccessary
     
         private:
