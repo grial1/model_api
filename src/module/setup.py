@@ -17,7 +17,7 @@ from setuptools import setup
 
 setup(
     name='model',
-    version='2.0',
+    version='2.1',
     description='This module wrapps the implementation of different machine learning algorithms used in binary classification',
     #long_description=readme,
     author='Gastón Rial',

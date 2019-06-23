@@ -10,7 +10,10 @@ CXX=g++
 
 .PHONY:$(PROG).cc
 
-all: $(OBJECTS) $(PROG).o $(PROG).bin
+all: model $(OBJECTS) $(PROG).o $(PROG).bin
+
+model:
+	$(MAKE) -C src/module
 
 Dataset.o:
 	$(CXX) -c -o obj/$@ src/Dataset.cc $(CXXFLAGS)

@@ -8,7 +8,8 @@ init:
 	pip3 install -r $(REQ)
 
 install:
-	./setup.py install
+	sudo ./setup.py install 
+	# --install-base $${HOME}/.local
 
 test:
 	./setup.py test

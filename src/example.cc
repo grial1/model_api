@@ -9,7 +9,7 @@ namespace ma = model_api;
 
 int main(int argc, char** argv)
 {
-    setenv("PYTHONPATH", ".", 1);
+    //setenv("PYTHONPATH", ".", 1);
     Py_Initialize();
     np::initialize();
 
