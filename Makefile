@@ -1,5 +1,6 @@
 PROG=example
 TEST=debug
+SHARED=libInputDataset.so
 OBJECTS=Dataset.o InputDataset.o
 
 INCLUDE= -Iinclude/ -I/usr/include/python3.6m/
@@ -10,26 +11,40 @@ CXX=g++
 
 .PHONY:$(PROG).cc
 
-all: model $(OBJECTS) $(PROG).o $(PROG).bin
+all: model $(OBJECTS) $(SHARED)
+
+example: $(PROG).o $(PROG).bin
 
 model:
 	$(MAKE) -C src/module
 
 Dataset.o:
-	$(CXX) -c -o obj/$@ src/Dataset.cc $(CXXFLAGS)
+	$(CXX) -fPIC -c -o obj/$@ src/Dataset.cc $(CXXFLAGS)
 
 InputDataset.o: 
-	$(CXX) -c -o obj/$@ src/InputDataset.cc $(CXXFLAGS)
+	$(CXX) -fPIC -c -o obj/$@ src/InputDataset.cc $(CXXFLAGS)
+
+$(SHARED):
+	mkdir -p build/lib
+	$(CXX) -fPIC obj/Dataset.o obj/InputDataset.o $(LIB) $(CXXFLAGS) -shared -o build/lib/$@
+
+install:$(SHARED)
+	cp build/lib/$< /usr/lib/
+	ldconfig -v
+	@echo "\n\tINSTALLATION FINISHED"
 
 $(PROG).o:$(PROG).cc
 	$(CXX) -c -o obj/$@ src/$< $(CXXFLAGS)
 
 $(PROG).bin: $(PROG).o
-	$(CXX) -o $@ obj/Dataset.o obj/InputDataset.o obj/$< $(LIB) $(CXXFLAGS)
+	$(CXX) obj/$< $(CXXFLAGS) $(LIB) -lInputDataset -o $@
+	./example.bin
 
 clean:
 	rm -rf obj/*.o
 	rm -rf *.bin
+	rm -rf *.so
+	rm -rf build
 
 run:
 	./$(PROG).bin

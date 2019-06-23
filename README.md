@@ -13,5 +13,13 @@ C++ library for wrapping Python3 predictive models (e.g based in scikit-learn or
 ## Usage
 ```
     $ make
-    $ ./example.bin
+    $ sudo make install
+    # For testing
+    $ make example
 ```
+
+## Pending:
+
+1) Generate API documentation
+2) Change build system to use autotools (try to make it cross-platform)
+3) Code unit tests
