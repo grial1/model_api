@@ -1,5 +1,7 @@
-///  author  Gastón Rial
-///  date    2019-06-16
+/// @file InputDataset.h  
+/// @author Gastón Rial
+/// @date 2019-06-16
+/// @brief API to communicate with predictive model implemented in Python
 
 #ifndef MODEL_API_INCLUDE_INPUT_DATASET_H_
 #define MODEL_API_INCLUDE_INPUT_DATASET_H_
@@ -14,30 +16,39 @@
 namespace py = boost::python;
 using pyObject = py::object;
 
+/// @namespace model_api
+/// @brief Namespace that gathers all the API classes
 namespace model_api
 {
   
-    /// class InputDataset
-    /// brief Abstract class that represents a data set used to be predicted
+    /// @class InputDataset
+    /// @brief API class that represents an input data set of unknows to be predicted
     class InputDataset:public Dataset
     {
 
         public:
-            InputDataset()=delete;                  ///< Delete default construtor
-            ~InputDataset();                        ///< Destructor
-            InputDataset(nda& oFM);           ///< Copy constructor
-            InputDataset(nda&& oFM);          ///< Move constructor
-            void operator=(nda& oFM);         ///< Copy assigment operator
-            void operator=(nda&& oFM);        ///< Move assigment operator
-            nda& getFileMatrix() const;             ///< Accessor method
-            //nda& getPredictions() const;            ///< Accessor method
-            void setFileMatrix(nda& oFM);     ///< Mutator method
-            //void setPredictions(nda& oP);     ///< Mutator method
-            void predict(nda& out);                         ///< Make prediction from filesmatrix
-            void initModel(const nda& oFMTrain,const nda& oPTrain);           ///< Initilize model and train, in case is neccessary
+            InputDataset()=delete;                                  ///< Delete default construtor
+            ~InputDataset();                                        ///< Destructor
+            /// @param oFM ndarray with data instances
+            InputDataset(nda& oFM);                                 ///< Copy constructor
+            /// @param oFM ndarray with data instances
+            InputDataset(nda&& oFM);                                ///< Move constructor
+            /// @param oFM ndarray with data instances
+            void operator=(nda& oFM);                               ///< Copy assigment operator
+            /// @param oFM ndarray with data instances
+            void operator=(nda&& oFM);                              ///< Move assigment operator
+            /// @return ndarray with data instances
+            nda& getFileMatrix() const;                             ///< Accessor method
+            /// @param oFM ndarray with data instances
+            void setFileMatrix(nda& oFM);                           ///< Mutator method
+            /// @param out ndarray with predictions (one entry for each row in oFM)
+            void predict(nda& out);                                 ///< Make prediction from filesmatrix
+            /// @param oFMTrain ndarray with train data instances
+            /// @param oPTrain ndarray with train predictions (used for supervised learning)
+            void initModel(const nda& oFMTrain,const nda& oPTrain); ///< Initilize model and train, in case is neccessary
     
         private:
-            pyObject oModel;
+            pyObject oModel; ///< Instance of model.Model class
 
     };
 
