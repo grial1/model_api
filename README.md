@@ -18,6 +18,9 @@ C++ library for wrapping Python3 predictive models (e.g based in scikit-learn or
     $ make example
 ```
 
+## API documentation
+Please refer to *[this page.](https://grial1.github.io/model_api/)*
+
 ## Pending:
 
 1) Make it cross-platform
