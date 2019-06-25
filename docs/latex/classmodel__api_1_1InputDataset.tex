@@ -1,0 +1,168 @@
+\hypertarget{classmodel__api_1_1InputDataset}{}\section{model\+\_\+api\+:\+:Input\+Dataset Class Reference}
+\label{classmodel__api_1_1InputDataset}\index{model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}}
+
+
+A\+PI class that represents an input data set of unknows to be predicted.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Dataset.\+h$>$}
+
+
+
+Inheritance diagram for model\+\_\+api\+:\+:Input\+Dataset\+:
+% FIG 0
+
+
+Collaboration diagram for model\+\_\+api\+:\+:Input\+Dataset\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmodel__api_1_1InputDataset_a410e07ea3fe528370ff45f7e1833f5ec}\label{classmodel__api_1_1InputDataset_a410e07ea3fe528370ff45f7e1833f5ec}} 
+\hyperlink{classmodel__api_1_1InputDataset_a410e07ea3fe528370ff45f7e1833f5ec}{Input\+Dataset} ()=delete
+\begin{DoxyCompactList}\small\item\em Delete default construtor. \end{DoxyCompactList}\item 
+\hyperlink{classmodel__api_1_1InputDataset_a31f12b83db2195f609dfc8af27cdbc58}{$\sim$\+Input\+Dataset} ()
+\item 
+\hyperlink{classmodel__api_1_1InputDataset_a5fd9fc18bbd147d612acb16a808a135c}{Input\+Dataset} (nda \&o\+FM)
+\item 
+\hyperlink{classmodel__api_1_1InputDataset_a213885343387992b05a173ecb70a628f}{Input\+Dataset} (nda \&\&o\+FM)
+\item 
+void \hyperlink{classmodel__api_1_1InputDataset_a59c9f5a14675794a67ef0eafa7550d8d}{operator=} (nda \&o\+FM)
+\item 
+void \hyperlink{classmodel__api_1_1InputDataset_a192c20a95f93e03b4c4adb07e8e5e077}{operator=} (nda \&\&o\+FM)
+\item 
+nda \& \hyperlink{classmodel__api_1_1InputDataset_a853b380f548e21ee7421f887b9be2722}{get\+File\+Matrix} () const
+\item 
+void \hyperlink{classmodel__api_1_1InputDataset_a71111535a17422db1f0fdbe2ac6ce1c8}{set\+File\+Matrix} (nda \&o\+FM)
+\item 
+void \hyperlink{classmodel__api_1_1InputDataset_af25824b44f866ff2b03e5d1036d7215a}{predict} (nda \&out)
+\item 
+void \hyperlink{classmodel__api_1_1InputDataset_af7d130afc8889825573e738906397714}{init\+Model} (const nda \&o\+F\+M\+Train, const nda \&o\+P\+Train)
+\begin{DoxyCompactList}\small\item\em Initilize model and train, in case is neccessary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A\+PI class that represents an input data set of unknows to be predicted. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmodel__api_1_1InputDataset_a31f12b83db2195f609dfc8af27cdbc58}\label{classmodel__api_1_1InputDataset_a31f12b83db2195f609dfc8af27cdbc58}} 
+\index{model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}!````~Input\+Dataset@{$\sim$\+Input\+Dataset}}
+\index{````~Input\+Dataset@{$\sim$\+Input\+Dataset}!model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}}
+\subsubsection{\texorpdfstring{$\sim$\+Input\+Dataset()}{~InputDataset()}}
+{\footnotesize\ttfamily model\+\_\+api\+::\+Input\+Dataset\+::$\sim$\+Input\+Dataset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor \mbox{\Hypertarget{classmodel__api_1_1InputDataset_a5fd9fc18bbd147d612acb16a808a135c}\label{classmodel__api_1_1InputDataset_a5fd9fc18bbd147d612acb16a808a135c}} 
+\index{model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}!Input\+Dataset@{Input\+Dataset}}
+\index{Input\+Dataset@{Input\+Dataset}!model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}}
+\subsubsection{\texorpdfstring{Input\+Dataset()}{InputDataset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily model\+\_\+api\+::\+Input\+Dataset\+::\+Input\+Dataset (\begin{DoxyParamCaption}\item[{nda \&}]{o\+FM }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em o\+FM} & ndarray with data instances Copy constructor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmodel__api_1_1InputDataset_a213885343387992b05a173ecb70a628f}\label{classmodel__api_1_1InputDataset_a213885343387992b05a173ecb70a628f}} 
+\index{model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}!Input\+Dataset@{Input\+Dataset}}
+\index{Input\+Dataset@{Input\+Dataset}!model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}}
+\subsubsection{\texorpdfstring{Input\+Dataset()}{InputDataset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily model\+\_\+api\+::\+Input\+Dataset\+::\+Input\+Dataset (\begin{DoxyParamCaption}\item[{nda \&\&}]{o\+FM }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em o\+FM} & ndarray with data instances Move constructor \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmodel__api_1_1InputDataset_a853b380f548e21ee7421f887b9be2722}\label{classmodel__api_1_1InputDataset_a853b380f548e21ee7421f887b9be2722}} 
+\index{model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}!get\+File\+Matrix@{get\+File\+Matrix}}
+\index{get\+File\+Matrix@{get\+File\+Matrix}!model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}}
+\subsubsection{\texorpdfstring{get\+File\+Matrix()}{getFileMatrix()}}
+{\footnotesize\ttfamily nda\& model\+\_\+api\+::\+Input\+Dataset\+::get\+File\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+ndarray with data instances Accessor method 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classmodel__api_1_1Dataset_aa2ae7007705796c05e5df64a3d1cda0e}{model\+\_\+api\+::\+Dataset}.
+
+\mbox{\Hypertarget{classmodel__api_1_1InputDataset_af7d130afc8889825573e738906397714}\label{classmodel__api_1_1InputDataset_af7d130afc8889825573e738906397714}} 
+\index{model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}!init\+Model@{init\+Model}}
+\index{init\+Model@{init\+Model}!model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}}
+\subsubsection{\texorpdfstring{init\+Model()}{initModel()}}
+{\footnotesize\ttfamily void model\+\_\+api\+::\+Input\+Dataset\+::init\+Model (\begin{DoxyParamCaption}\item[{const nda \&}]{o\+F\+M\+Train,  }\item[{const nda \&}]{o\+P\+Train }\end{DoxyParamCaption})}
+
+
+
+Initilize model and train, in case is neccessary. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o\+F\+M\+Train} & ndarray with train data instances \\
+\hline
+{\em o\+P\+Train} & ndarray with train predictions (used for supervised learning) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmodel__api_1_1InputDataset_a59c9f5a14675794a67ef0eafa7550d8d}\label{classmodel__api_1_1InputDataset_a59c9f5a14675794a67ef0eafa7550d8d}} 
+\index{model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}!operator=@{operator=}}
+\index{operator=@{operator=}!model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void model\+\_\+api\+::\+Input\+Dataset\+::operator= (\begin{DoxyParamCaption}\item[{nda \&}]{o\+FM }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em o\+FM} & ndarray with data instances Copy assigment operator \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmodel__api_1_1InputDataset_a192c20a95f93e03b4c4adb07e8e5e077}\label{classmodel__api_1_1InputDataset_a192c20a95f93e03b4c4adb07e8e5e077}} 
+\index{model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}!operator=@{operator=}}
+\index{operator=@{operator=}!model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void model\+\_\+api\+::\+Input\+Dataset\+::operator= (\begin{DoxyParamCaption}\item[{nda \&\&}]{o\+FM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em o\+FM} & ndarray with data instances Move assigment operator \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classmodel__api_1_1Dataset_a48ed0afad3bae183a4615a4de9dba854}{model\+\_\+api\+::\+Dataset}.
+
+\mbox{\Hypertarget{classmodel__api_1_1InputDataset_af25824b44f866ff2b03e5d1036d7215a}\label{classmodel__api_1_1InputDataset_af25824b44f866ff2b03e5d1036d7215a}} 
+\index{model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}!predict@{predict}}
+\index{predict@{predict}!model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}}
+\subsubsection{\texorpdfstring{predict()}{predict()}}
+{\footnotesize\ttfamily void model\+\_\+api\+::\+Input\+Dataset\+::predict (\begin{DoxyParamCaption}\item[{nda \&}]{out }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & ndarray with predictions (one entry for each row in o\+FM) Make prediction from filesmatrix \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmodel__api_1_1InputDataset_a71111535a17422db1f0fdbe2ac6ce1c8}\label{classmodel__api_1_1InputDataset_a71111535a17422db1f0fdbe2ac6ce1c8}} 
+\index{model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}!set\+File\+Matrix@{set\+File\+Matrix}}
+\index{set\+File\+Matrix@{set\+File\+Matrix}!model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}}
+\subsubsection{\texorpdfstring{set\+File\+Matrix()}{setFileMatrix()}}
+{\footnotesize\ttfamily void model\+\_\+api\+::\+Input\+Dataset\+::set\+File\+Matrix (\begin{DoxyParamCaption}\item[{nda \&}]{o\+FM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em o\+FM} & ndarray with data instances Mutator method \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classmodel__api_1_1Dataset_a50e8c50a3b45cb39cf4403ebfdc1c2dc}{model\+\_\+api\+::\+Dataset}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{InputDataset_8h}{Input\+Dataset.\+h}\end{DoxyCompactItemize}

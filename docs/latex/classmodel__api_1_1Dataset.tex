@@ -1,0 +1,139 @@
+\hypertarget{classmodel__api_1_1Dataset}{}\section{model\+\_\+api\+:\+:Dataset Class Reference}
+\label{classmodel__api_1_1Dataset}\index{model\+\_\+api\+::\+Dataset@{model\+\_\+api\+::\+Dataset}}
+
+
+Abstract class that represents a data set.  
+
+
+
+
+{\ttfamily \#include $<$Dataset.\+h$>$}
+
+
+
+Inheritance diagram for model\+\_\+api\+:\+:Dataset\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmodel__api_1_1Dataset_af3bb5174dc26a002453038644d0d92c8}\label{classmodel__api_1_1Dataset_af3bb5174dc26a002453038644d0d92c8}} 
+\hyperlink{classmodel__api_1_1Dataset_af3bb5174dc26a002453038644d0d92c8}{Dataset} ()=delete
+\begin{DoxyCompactList}\small\item\em Delete default construtor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmodel__api_1_1Dataset_a447ae945efa7d7d2588aa5b482bb565c}\label{classmodel__api_1_1Dataset_a447ae945efa7d7d2588aa5b482bb565c}} 
+virtual \hyperlink{classmodel__api_1_1Dataset_a447ae945efa7d7d2588aa5b482bb565c}{$\sim$\+Dataset} ()=0
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmodel__api_1_1Dataset_aadc165f6e3c76c2a31ebc132cac6e01c}{Dataset} (const nda \&o\+FM)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmodel__api_1_1Dataset_a4000020cf9bc6dd1a55dd40f979f7aea}{operator=} (const nda \&o\+FM)
+\item 
+virtual void \hyperlink{classmodel__api_1_1Dataset_a48ed0afad3bae183a4615a4de9dba854}{operator=} (nda \&\&o\+FM)
+\item 
+virtual nda \& \hyperlink{classmodel__api_1_1Dataset_aa2ae7007705796c05e5df64a3d1cda0e}{get\+File\+Matrix} () const
+\begin{DoxyCompactList}\small\item\em $<$ Accessor method \end{DoxyCompactList}\item 
+virtual void \hyperlink{classmodel__api_1_1Dataset_a50e8c50a3b45cb39cf4403ebfdc1c2dc}{set\+File\+Matrix} (nda \&o\+FM)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class that represents a data set. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmodel__api_1_1Dataset_aadc165f6e3c76c2a31ebc132cac6e01c}\label{classmodel__api_1_1Dataset_aadc165f6e3c76c2a31ebc132cac6e01c}} 
+\index{model\+\_\+api\+::\+Dataset@{model\+\_\+api\+::\+Dataset}!Dataset@{Dataset}}
+\index{Dataset@{Dataset}!model\+\_\+api\+::\+Dataset@{model\+\_\+api\+::\+Dataset}}
+\subsubsection{\texorpdfstring{Dataset()}{Dataset()}}
+{\footnotesize\ttfamily model\+\_\+api\+::\+Dataset\+::\+Dataset (\begin{DoxyParamCaption}\item[{const nda \&}]{o\+FM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o\+FM} & ndarray with data instances \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmodel__api_1_1Dataset_aa2ae7007705796c05e5df64a3d1cda0e}\label{classmodel__api_1_1Dataset_aa2ae7007705796c05e5df64a3d1cda0e}} 
+\index{model\+\_\+api\+::\+Dataset@{model\+\_\+api\+::\+Dataset}!get\+File\+Matrix@{get\+File\+Matrix}}
+\index{get\+File\+Matrix@{get\+File\+Matrix}!model\+\_\+api\+::\+Dataset@{model\+\_\+api\+::\+Dataset}}
+\subsubsection{\texorpdfstring{get\+File\+Matrix()}{getFileMatrix()}}
+{\footnotesize\ttfamily virtual nda\& model\+\_\+api\+::\+Dataset\+::get\+File\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+$<$ Accessor method 
+
+\begin{DoxyReturn}{Returns}
+ndarray with data instances 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classmodel__api_1_1InputDataset_a853b380f548e21ee7421f887b9be2722}{model\+\_\+api\+::\+Input\+Dataset}.
+
+\mbox{\Hypertarget{classmodel__api_1_1Dataset_a4000020cf9bc6dd1a55dd40f979f7aea}\label{classmodel__api_1_1Dataset_a4000020cf9bc6dd1a55dd40f979f7aea}} 
+\index{model\+\_\+api\+::\+Dataset@{model\+\_\+api\+::\+Dataset}!operator=@{operator=}}
+\index{operator=@{operator=}!model\+\_\+api\+::\+Dataset@{model\+\_\+api\+::\+Dataset}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void model\+\_\+api\+::\+Dataset\+::operator= (\begin{DoxyParamCaption}\item[{const nda \&}]{o\+FM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em o\+FM} & ndarray with data instances \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyParams}{Parameters}
+{\em o\+FM} & Copy assigment operator \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmodel__api_1_1Dataset_a48ed0afad3bae183a4615a4de9dba854}\label{classmodel__api_1_1Dataset_a48ed0afad3bae183a4615a4de9dba854}} 
+\index{model\+\_\+api\+::\+Dataset@{model\+\_\+api\+::\+Dataset}!operator=@{operator=}}
+\index{operator=@{operator=}!model\+\_\+api\+::\+Dataset@{model\+\_\+api\+::\+Dataset}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void model\+\_\+api\+::\+Dataset\+::operator= (\begin{DoxyParamCaption}\item[{nda \&\&}]{o\+FM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em o\+FM} & ndarray with data instances \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyParams}{Parameters}
+{\em o\+FM} & Move assigment operator \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classmodel__api_1_1InputDataset_a192c20a95f93e03b4c4adb07e8e5e077}{model\+\_\+api\+::\+Input\+Dataset}.
+
+\mbox{\Hypertarget{classmodel__api_1_1Dataset_a50e8c50a3b45cb39cf4403ebfdc1c2dc}\label{classmodel__api_1_1Dataset_a50e8c50a3b45cb39cf4403ebfdc1c2dc}} 
+\index{model\+\_\+api\+::\+Dataset@{model\+\_\+api\+::\+Dataset}!set\+File\+Matrix@{set\+File\+Matrix}}
+\index{set\+File\+Matrix@{set\+File\+Matrix}!model\+\_\+api\+::\+Dataset@{model\+\_\+api\+::\+Dataset}}
+\subsubsection{\texorpdfstring{set\+File\+Matrix()}{setFileMatrix()}}
+{\footnotesize\ttfamily virtual void model\+\_\+api\+::\+Dataset\+::set\+File\+Matrix (\begin{DoxyParamCaption}\item[{nda \&}]{o\+FM }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em o\+FM} & ndarray with data instances \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyParams}{Parameters}
+{\em o\+FM} & Mutator method \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classmodel__api_1_1InputDataset_a71111535a17422db1f0fdbe2ac6ce1c8}{model\+\_\+api\+::\+Input\+Dataset}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{Dataset_8h}{Dataset.\+h}\end{DoxyCompactItemize}
