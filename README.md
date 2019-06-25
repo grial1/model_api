@@ -20,6 +20,5 @@ C++ library for wrapping Python3 predictive models (e.g based in scikit-learn or
 
 ## Pending:
 
-1) Generate API documentation
-2) Change build system to use autotools (try to make it cross-platform)
-3) Code unit tests
+1) Make it cross-platform
+2) Unit tests

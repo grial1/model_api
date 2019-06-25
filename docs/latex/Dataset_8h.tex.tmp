@@ -1,0 +1,41 @@
+\hypertarget{Dataset_8h}{}\section{include/\+Dataset.h File Reference}
+\label{Dataset_8h}\index{include/\+Dataset.\+h@{include/\+Dataset.\+h}}
+
+
+abstract class to be extended and implemented by Input\+Dataset  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$boost/python.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/python/numpy.\+hpp$>$}\newline
+Include dependency graph for Dataset.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmodel__api_1_1Dataset}{model\+\_\+api\+::\+Dataset}
+\begin{DoxyCompactList}\small\item\em Abstract class that represents a data set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacemodel__api}{model\+\_\+api}
+\begin{DoxyCompactList}\small\item\em Namespace that gathers all the A\+PI classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{Dataset_8h_a5030fca1d1683829f5df29a075aa1f9e}\label{Dataset_8h_a5030fca1d1683829f5df29a075aa1f9e}} 
+using {\bfseries nda} = np\+::ndarray
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+abstract class to be extended and implemented by Input\+Dataset 
+
+\begin{DoxyAuthor}{Author}
+Gastón Rial 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2019-\/06-\/16 
+\end{DoxyDate}

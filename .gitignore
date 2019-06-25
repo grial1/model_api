@@ -40,3 +40,6 @@
 
 # Catch library (header file)
 include/test
+
+# Doxygen config
+Doxyfile
