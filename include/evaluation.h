@@ -6,25 +6,77 @@
 #ifndef MODEL_API_INCLUDE_EVALUATION_H_
 #define MODEL_API_INCLUDE_EVALUATION_H_
 
+enum class MetricType { TP,         ///< True Positive
+                        TN,         ///< True Negative
+                        FP,         ///< False Positive
+                        FN,         ///< False Negative
+                        PRECISION,  ///< Precision
+                        RECALL,     ///< Recall
+                        FONE,       ///< F1-Score
+                        ND          ///< Not defined
+                    };
+
 struct PerformaceMetric 
 {
     
-    double metric;
+    PerformaceMetric(MetricType type):oType{type}{};
+    PerformaceMetric(MetricType type, double m):oType{type},metric{m}{};
+    MetricType getType() const { return this->oType;};
+
+    double metric = 0;
+
+    private:
+        MetricType oType = MetricType::ND;
 
 };
 
-struct TruePositives : public  PerformaceMetric {}; 
+struct TruePositive : public  PerformaceMetric {
 
-struct TrueNegatives : public  PerformaceMetric {};
+    TruePositive():PerformaceMetric{MetricType::TP}{};
+    TruePositive(double metric):PerformaceMetric{MetricType::TP, metric}{};
 
-struct FalseNegatives : public  PerformaceMetric {};
+}; 
 
-struct FalsePostives : public  PerformaceMetric {};
+struct TrueNegative : public  PerformaceMetric {
 
-struct Precision : public  PerformaceMetric {};
+    TrueNegative():PerformaceMetric{MetricType::TN}{};
+    TrueNegative(double metric):PerformaceMetric{MetricType::TN, metric}{};
 
-struct Recall : public  PerformaceMetric {};
+};
 
-struct F1Score : public  PerformaceMetric {};
+struct FalseNegative : public  PerformaceMetric {
+
+    FalseNegative():PerformaceMetric{MetricType::FN}{};
+    FalseNegative(double metric):PerformaceMetric{MetricType::FN, metric}{};
+
+};
+
+struct FalsePostive : public  PerformaceMetric {
+
+    FalsePostive():PerformaceMetric{MetricType::FP}{};
+    FalsePostive(double metric):PerformaceMetric{MetricType::FP, metric}{};
+
+};
+
+struct Precision : public  PerformaceMetric {
+
+    Precision():PerformaceMetric{MetricType::PRECISION}{};
+    Precision(double metric):PerformaceMetric{MetricType::PRECISION, metric}{};
+
+};
+
+struct Recall : public  PerformaceMetric {
+
+    Recall():PerformaceMetric{MetricType::RECALL}{};
+    Recall(double metric):PerformaceMetric{MetricType::RECALL, metric}{};
+
+};
+
+struct F1Score : public  PerformaceMetric {
+
+    F1Score():PerformaceMetric{MetricType::FONE}{};
+    F1Score(double):PerformaceMetric{MetricType::FONE, metric}{};
+
+};
 
 #endif ///< MODEL_API_INCLUDE_EVALUATION_H_

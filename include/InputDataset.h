@@ -15,6 +15,7 @@
 
 namespace py = boost::python;
 using pyObject = py::object;
+using pyTuple = py::tuple;
 
 /// @namespace model_api
 /// @brief Namespace that gathers all the API classes
@@ -46,8 +47,10 @@ namespace model_api
             /// @param oFMTrain ndarray with train data instances
             /// @param oPTrain ndarray with train predictions (used for supervised learning)
             void initModel(const nda& oFMTrain,const nda& oPTrain);     ///< Initilize model and train, in case is neccessary
+            /// @param oFMTest input data instances for testing the model
+            /// @param oPTest Predictions of the tests dataset
             /// @param oPMList list of metrics to be returned
-            void testModel(const std::vector<PerformaceMetric>& oPMList);  ///< Method that returns a list of evaluation metrics from a tested model
+            void testModel(const nda& oFMTest,const nda& oPTest, std::vector<PerformaceMetric>& oPMList);  ///< Method that returns a list of evaluation metrics from a tested model
     
         private:
             pyObject oModel; ///< Instance of model.Model class

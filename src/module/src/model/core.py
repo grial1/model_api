@@ -55,13 +55,13 @@ class Model:
             #  1 => False positive
             totals = dict(zip(unique, counts))
             if ( not -1 in totals ) and ( not -2 in totals ):
-                return (totals.get(-1,0),totals.get(0,0),totals.get(1,0),totals.get(-2,0))
+                return (4, totals.get(-1,0),totals.get(0,0),totals.get(1,0),totals.get(-2,0))
             recall = float(totals.get(-1,0)/(totals.get(-1,0)+totals.get(-2,0)))
             if ( not -1 in totals ) and ( not 1 in totals ):
-                return ((totals.get(-1,0),totals.get(0,0),totals.get(1,0),totals.get(-2,0)),recall)
+                return (5, totals.get(-1,0),totals.get(0,0),totals.get(1,0),totals.get(-2,0),recall)
             precision = float(totals.get(-1,0)/(totals.get(-1,0)+totals.get(1,0)))
             f1 = (2*precision*recall)/(precision+recall)
             # Returns TP, TN, FP and FN
-            return ((totals.get(-1,0),totals.get(0,0),totals.get(1,0),totals.get(-2,0)),(precision, recall,f1))
+            return (7, totals.get(-1,0),totals.get(0,0),totals.get(1,0),totals.get(-2,0), recall, precision, f1)
         else:
             raise Exception("ERROR: No test dataset defined")      

@@ -77,13 +77,6 @@ void InputDataset::setFileMatrix(nda& oFM) {
 
 }     ///< Mutator method
 
-//void InputDataset::setPredictions(nda& oP)
-//{
-//
-//    Dataset::setPredictions(oP);
-//
-//}     ///< Mutator method
-        
 void InputDataset::predict(nda& out){
 
     setenv("PYTHONPATH", ".", 1);   ///< Allow Python to load modules from the current directory
@@ -119,11 +112,77 @@ void InputDataset::initModel(const nda& oFMTrain,const nda& oPTrain)
         this->oModel.attr("setPrediction")(oPTrain);
         this->oModel.attr("train")();
 
-    } catch (const py::error_already_set& )
+    } catch ( const py::error_already_set& )
     {
 
         PyErr_Print();
         throw std::runtime_error("Error when using Model");
+
+    }
+
+}
+
+void InputDataset::testModel(const nda& oFMTest,const nda& oPTest, std::vector<PerformaceMetric>& oPMList)
+{
+
+    setenv("PYTHONPATH", ".", 1);   ///< Allow Python to load modules from the current directory
+    Py_Initialize();                ///< Initialize Python
+
+    try
+    {
+
+        this->oModel.attr("setDataset")(oFMTest);
+        this->oModel.attr("setPrediction")(oPTest);
+        pyObject oResults = this->oModel.attr("test")();
+
+        pyTuple oTuple = static_cast<pyTuple>(oResults);
+
+        /**
+         * Provisorial implementation
+        */
+        int size = py::extract<int>(oTuple[0]);
+
+        for( int i = 1; i < size ; ++i )
+        {
+
+            double metric = py::extract<double>(oTuple[i]);
+
+            switch (i)
+            {
+            case 1:
+                oPMList.push_back(TruePositive(metric));
+                break;
+            case 2:
+                oPMList.push_back(TrueNegative(metric));
+                break;
+            case 3:
+                oPMList.push_back(FalsePostive(metric));
+                break;
+            case 4:
+                oPMList.push_back(FalseNegative(metric));
+                break;
+            case 5:
+                oPMList.push_back(Recall(metric));
+                break;
+            case 6:
+                oPMList.push_back(Precision(metric));
+                break;
+            case 7:
+                oPMList.push_back(F1Score(metric));
+                break;
+            }
+
+        } 
+
+        /**
+         * Provisorial implementation
+        */
+
+    } catch ( const py::error_already_set& )
+    {
+
+        PyErr_Print();
+        throw std::runtime_error("Error when testing the Model");
 
     }
 
