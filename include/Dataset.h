@@ -9,8 +9,10 @@
 #pragma once
 
 #include <string>
+#include <vector>
 #include <boost/python.hpp>
 #include <boost/python/numpy.hpp>
+#include "evaluation.h"
 
 namespace np = boost::python::numpy;
 using nda = np::ndarray;
@@ -65,6 +67,8 @@ namespace model_api
                 this->oFilesMatrix = &oFM;
 
             }
+            /// @param oPMList list of metrics to be returned
+            virtual void testModel(const std::vector<PerformaceMetric>& oPMList)=0;  ///< Method that returns a list of evaluation metrics from a tested model
 
         private:
             nda* oFilesMatrix = nullptr; ///< Bidimensional array associated with encoded log file

@@ -27,25 +27,27 @@ namespace model_api
     {
 
         public:
-            InputDataset()=delete;                                  ///< Delete default construtor
-            ~InputDataset();                                        ///< Destructor
+            InputDataset()=delete;                                      ///< Delete default construtor
+            ~InputDataset();                                            ///< Destructor
             /// @param oFM ndarray with data instances
-            InputDataset(nda& oFM);                                 ///< Copy constructor
+            InputDataset(nda& oFM);                                     ///< Copy constructor
             /// @param oFM ndarray with data instances
-            InputDataset(nda&& oFM);                                ///< Move constructor
+            InputDataset(nda&& oFM);                                    ///< Move constructor
             /// @param oFM ndarray with data instances
-            void operator=(nda& oFM);                               ///< Copy assigment operator
+            void operator=(nda& oFM);                                   ///< Copy assigment operator
             /// @param oFM ndarray with data instances
-            void operator=(nda&& oFM);                              ///< Move assigment operator
+            void operator=(nda&& oFM);                                  ///< Move assigment operator
             /// @return ndarray with data instances
-            nda& getFileMatrix() const;                             ///< Accessor method
+            nda& getFileMatrix() const;                                 ///< Accessor method
             /// @param oFM ndarray with data instances
-            void setFileMatrix(nda& oFM);                           ///< Mutator method
+            void setFileMatrix(nda& oFM);                               ///< Mutator method
             /// @param out ndarray with predictions (one entry for each row in oFM)
-            void predict(nda& out);                                 ///< Make prediction from filesmatrix
+            void predict(nda& out);                                     ///< Make prediction from filesmatrix
             /// @param oFMTrain ndarray with train data instances
             /// @param oPTrain ndarray with train predictions (used for supervised learning)
-            void initModel(const nda& oFMTrain,const nda& oPTrain); ///< Initilize model and train, in case is neccessary
+            void initModel(const nda& oFMTrain,const nda& oPTrain);     ///< Initilize model and train, in case is neccessary
+            /// @param oPMList list of metrics to be returned
+            void testModel(const std::vector<PerformaceMetric>& oPMList);  ///< Method that returns a list of evaluation metrics from a tested model
     
         private:
             pyObject oModel; ///< Instance of model.Model class
