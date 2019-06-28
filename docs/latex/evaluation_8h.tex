@@ -1,0 +1,106 @@
+\hypertarget{evaluation_8h}{}\section{include/evaluation.h File Reference}
+\label{evaluation_8h}\index{include/evaluation.\+h@{include/evaluation.\+h}}
+
+
+abstract class to be extended and implemented by Input\+Dataset  
+
+
+{\ttfamily \#include $<$ostream$>$}\newline
+Include dependency graph for evaluation.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPerformaceMetric}{Performace\+Metric}
+\item 
+struct \hyperlink{structTruePositive}{True\+Positive}
+\item 
+struct \hyperlink{structTrueNegative}{True\+Negative}
+\item 
+struct \hyperlink{structFalseNegative}{False\+Negative}
+\item 
+struct \hyperlink{structFalsePostive}{False\+Postive}
+\item 
+struct \hyperlink{structPrecision}{Precision}
+\item 
+struct \hyperlink{structRecall}{Recall}
+\item 
+struct \hyperlink{structF1Score}{F1\+Score}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219}{Metric\+Type} \{ \newline
+\hyperlink{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a0a41f2dd923676871312de0e840d302e}{Metric\+Type\+::\+TP}, 
+\hyperlink{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a947d7d61cd9ae4cb2ccd29438d7f9974}{Metric\+Type\+::\+TN}, 
+\hyperlink{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a4ebada6a2af2bcba53ded1d7b414f081}{Metric\+Type\+::\+FP}, 
+\hyperlink{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219ad9d729a2fc731c33ea1360682d73aad5}{Metric\+Type\+::\+FN}, 
+\newline
+\hyperlink{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a6bec3fae1608a879905a85babf957cf3}{Metric\+Type\+::\+P\+R\+E\+C\+I\+S\+I\+ON}, 
+\hyperlink{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a7b2babc680386704751b68a62720db20}{Metric\+Type\+::\+R\+E\+C\+A\+LL}, 
+\hyperlink{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a710e39cddee2e0c050dc6c14f0ccce58}{Metric\+Type\+::\+F\+O\+NE}, 
+\hyperlink{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a9a116c50d133c8648404081885194300}{Metric\+Type\+::\+ND}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{evaluation_8h_a283e81451e164a88c1560af5032dc257}\label{evaluation_8h_a283e81451e164a88c1560af5032dc257}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&out, const \hyperlink{structPerformaceMetric}{Performace\+Metric} \&o\+PM)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+abstract class to be extended and implemented by Input\+Dataset 
+
+\begin{DoxyAuthor}{Author}
+Gastón Rial 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2019-\/06-\/16 
+\end{DoxyDate}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219}\label{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219}} 
+\index{evaluation.\+h@{evaluation.\+h}!Metric\+Type@{Metric\+Type}}
+\index{Metric\+Type@{Metric\+Type}!evaluation.\+h@{evaluation.\+h}}
+\subsubsection{\texorpdfstring{Metric\+Type}{MetricType}}
+{\footnotesize\ttfamily enum \hyperlink{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219}{Metric\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TP@{TP}!evaluation.\+h@{evaluation.\+h}}\index{evaluation.\+h@{evaluation.\+h}!TP@{TP}}}\mbox{\Hypertarget{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a0a41f2dd923676871312de0e840d302e}\label{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a0a41f2dd923676871312de0e840d302e}} 
+TP&True Positive. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TN@{TN}!evaluation.\+h@{evaluation.\+h}}\index{evaluation.\+h@{evaluation.\+h}!TN@{TN}}}\mbox{\Hypertarget{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a947d7d61cd9ae4cb2ccd29438d7f9974}\label{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a947d7d61cd9ae4cb2ccd29438d7f9974}} 
+TN&True Negative. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FP@{FP}!evaluation.\+h@{evaluation.\+h}}\index{evaluation.\+h@{evaluation.\+h}!FP@{FP}}}\mbox{\Hypertarget{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a4ebada6a2af2bcba53ded1d7b414f081}\label{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a4ebada6a2af2bcba53ded1d7b414f081}} 
+FP&False Positive. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FN@{FN}!evaluation.\+h@{evaluation.\+h}}\index{evaluation.\+h@{evaluation.\+h}!FN@{FN}}}\mbox{\Hypertarget{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219ad9d729a2fc731c33ea1360682d73aad5}\label{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219ad9d729a2fc731c33ea1360682d73aad5}} 
+FN&False Negative. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+R\+E\+C\+I\+S\+I\+ON@{P\+R\+E\+C\+I\+S\+I\+ON}!evaluation.\+h@{evaluation.\+h}}\index{evaluation.\+h@{evaluation.\+h}!P\+R\+E\+C\+I\+S\+I\+ON@{P\+R\+E\+C\+I\+S\+I\+ON}}}\mbox{\Hypertarget{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a6bec3fae1608a879905a85babf957cf3}\label{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a6bec3fae1608a879905a85babf957cf3}} 
+P\+R\+E\+C\+I\+S\+I\+ON&\hyperlink{structPrecision}{Precision}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+C\+A\+LL@{R\+E\+C\+A\+LL}!evaluation.\+h@{evaluation.\+h}}\index{evaluation.\+h@{evaluation.\+h}!R\+E\+C\+A\+LL@{R\+E\+C\+A\+LL}}}\mbox{\Hypertarget{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a7b2babc680386704751b68a62720db20}\label{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a7b2babc680386704751b68a62720db20}} 
+R\+E\+C\+A\+LL&\hyperlink{structRecall}{Recall}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+O\+NE@{F\+O\+NE}!evaluation.\+h@{evaluation.\+h}}\index{evaluation.\+h@{evaluation.\+h}!F\+O\+NE@{F\+O\+NE}}}\mbox{\Hypertarget{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a710e39cddee2e0c050dc6c14f0ccce58}\label{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a710e39cddee2e0c050dc6c14f0ccce58}} 
+F\+O\+NE&F1-\/\+Score. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ND@{ND}!evaluation.\+h@{evaluation.\+h}}\index{evaluation.\+h@{evaluation.\+h}!ND@{ND}}}\mbox{\Hypertarget{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a9a116c50d133c8648404081885194300}\label{evaluation_8h_a5a73aada416b5b8e3f549fb0caf28219a9a116c50d133c8648404081885194300}} 
+ND&Not defined. \\
+\hline
+
+\end{DoxyEnumFields}

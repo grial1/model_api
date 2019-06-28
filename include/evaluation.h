@@ -6,6 +6,10 @@
 #ifndef MODEL_API_INCLUDE_EVALUATION_H_
 #define MODEL_API_INCLUDE_EVALUATION_H_
 
+#pragma once
+
+#include <ostream>
+
 enum class MetricType { TP,         ///< True Positive
                         TN,         ///< True Negative
                         FP,         ///< False Positive
@@ -77,6 +81,49 @@ struct F1Score : public  PerformaceMetric {
     F1Score():PerformaceMetric{MetricType::FONE}{};
     F1Score(double):PerformaceMetric{MetricType::FONE, metric}{};
 
+};
+
+static inline
+std::ostream& operator<<(std::ostream& out,const MetricType& oMT)
+{
+
+    switch(oMT)
+    {
+        case MetricType::TP:
+            out << "True Positive: ";
+            break;
+        case MetricType::TN:
+            out << "True Negative: ";
+            break;
+        case MetricType::FP:
+            out << "False Positive: ";
+            break;
+        case MetricType::FN:
+            out << "False Negative: ";
+            break;
+        case MetricType::PRECISION:
+            out << "Precision: ";
+            break;
+        case MetricType::RECALL:
+            out << "Recall: ";
+            break;
+        case MetricType::FONE:
+            out << "F1 Score: ";
+            break;    
+        default:
+            out << "Not defined: ";
+            break;
+    }
+    return out;
+
+};
+
+std::ostream& operator<<(std::ostream& out,const PerformaceMetric& oPM)
+{
+    out << oPM.getType();
+    out << oPM.metric;
+    return out;
+    
 };
 
 #endif ///< MODEL_API_INCLUDE_EVALUATION_H_

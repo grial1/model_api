@@ -3,6 +3,7 @@
 
 #include "InputDataset.h"
 #include <iostream>
+#include <vector>
 
 using namespace std;
 namespace ma = model_api;
@@ -42,6 +43,14 @@ int main(int argc, char** argv)
 
     oID.predict(oPredictions);
     cout << py::extract<const char*>(py::str(oPredictions)) << endl;
+
+    nda oFileMatTest = np::array(l);
+    nda oPredictionsTest = np::array(l2);
+    std::vector<PerformaceMetric> oPMList;
+    oID.testModel(oFileMatTest,oPredictionsTest,oPMList);
+
+    for(auto oPM : oPMList)
+        cout << oPM <<"\n" << endl;
     
     return 0;
 }

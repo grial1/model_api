@@ -40,7 +40,9 @@ void \hyperlink{classmodel__api_1_1InputDataset_a71111535a17422db1f0fdbe2ac6ce1c
 void \hyperlink{classmodel__api_1_1InputDataset_af25824b44f866ff2b03e5d1036d7215a}{predict} (nda \&out)
 \item 
 void \hyperlink{classmodel__api_1_1InputDataset_af7d130afc8889825573e738906397714}{init\+Model} (const nda \&o\+F\+M\+Train, const nda \&o\+P\+Train)
-\begin{DoxyCompactList}\small\item\em Initilize model and train, in case is neccessary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\item 
+void \hyperlink{classmodel__api_1_1InputDataset_a0829ebb09eca7632e7032f40d451c70d}{test\+Model} (const nda \&o\+F\+M\+Test, const nda \&o\+P\+Test, std\+::vector$<$ \hyperlink{structPerformaceMetric}{Performace\+Metric} $>$ \&o\+P\+M\+List)
+\begin{DoxyCompactList}\small\item\em Method that returns a list of evaluation metrics from a tested model. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -99,14 +101,10 @@ Reimplemented from \hyperlink{classmodel__api_1_1Dataset_aa2ae7007705796c05e5df6
 {\footnotesize\ttfamily void model\+\_\+api\+::\+Input\+Dataset\+::init\+Model (\begin{DoxyParamCaption}\item[{const nda \&}]{o\+F\+M\+Train,  }\item[{const nda \&}]{o\+P\+Train }\end{DoxyParamCaption})}
 
 
-
-Initilize model and train, in case is neccessary. 
-
-
 \begin{DoxyParams}{Parameters}
 {\em o\+F\+M\+Train} & ndarray with train data instances \\
 \hline
-{\em o\+P\+Train} & ndarray with train predictions (used for supervised learning) \\
+{\em o\+P\+Train} & ndarray with train predictions (used for supervised learning) Initilize model and train, in case is neccessary \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classmodel__api_1_1InputDataset_a59c9f5a14675794a67ef0eafa7550d8d}\label{classmodel__api_1_1InputDataset_a59c9f5a14675794a67ef0eafa7550d8d}} 
@@ -161,6 +159,25 @@ Reimplemented from \hyperlink{classmodel__api_1_1Dataset_a48ed0afad3bae183a4615a
 
 Reimplemented from \hyperlink{classmodel__api_1_1Dataset_a50e8c50a3b45cb39cf4403ebfdc1c2dc}{model\+\_\+api\+::\+Dataset}.
 
+\mbox{\Hypertarget{classmodel__api_1_1InputDataset_a0829ebb09eca7632e7032f40d451c70d}\label{classmodel__api_1_1InputDataset_a0829ebb09eca7632e7032f40d451c70d}} 
+\index{model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}!test\+Model@{test\+Model}}
+\index{test\+Model@{test\+Model}!model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}}
+\subsubsection{\texorpdfstring{test\+Model()}{testModel()}}
+{\footnotesize\ttfamily void model\+\_\+api\+::\+Input\+Dataset\+::test\+Model (\begin{DoxyParamCaption}\item[{const nda \&}]{o\+F\+M\+Test,  }\item[{const nda \&}]{o\+P\+Test,  }\item[{std\+::vector$<$ \hyperlink{structPerformaceMetric}{Performace\+Metric} $>$ \&}]{o\+P\+M\+List }\end{DoxyParamCaption})}
+
+
+
+Method that returns a list of evaluation metrics from a tested model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o\+F\+M\+Test} & input data instances for testing the model \\
+\hline
+{\em o\+P\+Test} & Predictions of the tests dataset \\
+\hline
+{\em o\+P\+M\+List} & list of metrics to be returned \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

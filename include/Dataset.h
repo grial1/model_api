@@ -12,7 +12,6 @@
 #include <vector>
 #include <boost/python.hpp>
 #include <boost/python/numpy.hpp>
-#include "evaluation.h"
 
 namespace np = boost::python::numpy;
 using nda = np::ndarray;
@@ -67,10 +66,6 @@ namespace model_api
                 this->oFilesMatrix = &oFM;
 
             }
-            /// @param oFMTest input data instances for testing the model
-            /// @param oPTest Predictions of the tests dataset
-            /// @param oPMList list of metrics to be returned
-            virtual void testModel(const nda& oFMTest,const nda& oPTest, std::vector<PerformaceMetric>& oPMList)=0;  ///< Method that returns a list of evaluation metrics from a tested model
 
         private:
             nda* oFilesMatrix = nullptr; ///< Bidimensional array associated with encoded log file

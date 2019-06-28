@@ -9,9 +9,12 @@
 #pragma once
 
 #include <exception>
+#include <vector>
+#include <string>
 #include <boost/python/object.hpp>
 #include <boost/python/import.hpp>
 #include "Dataset.h"
+#include "evaluation.h"
 
 namespace py = boost::python;
 using pyObject = py::object;

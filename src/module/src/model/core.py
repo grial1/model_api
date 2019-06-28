@@ -60,6 +60,8 @@ class Model:
             if ( not -1 in totals ) and ( not 1 in totals ):
                 return (5, totals.get(-1,0),totals.get(0,0),totals.get(1,0),totals.get(-2,0),recall)
             precision = float(totals.get(-1,0)/(totals.get(-1,0)+totals.get(1,0)))
+            if (precision+recall) == 0:
+                return (6, totals.get(-1,0),totals.get(0,0),totals.get(1,0),totals.get(-2,0),recall,precision)
             f1 = (2*precision*recall)/(precision+recall)
             # Returns TP, TN, FP and FN
             return (7, totals.get(-1,0),totals.get(0,0),totals.get(1,0),totals.get(-2,0), recall, precision, f1)

@@ -3,6 +3,33 @@
 
 #include "InputDataset.h"
 
+using namespace std;
+
+static inline 
+void splitString(const string& str, vector<string>& output, char delim = ' ')
+{
+    stringstream ss(str);
+    string token;
+    while (getline(ss, token, delim)) {
+        output.push_back(token);
+    }
+}
+
+static inline 
+double getDoubleValue(const char* element)
+{
+
+    vector<string> oVecDouble;
+    splitString(string{element},oVecDouble,'.');
+    double value = static_cast<double>(atoi(oVecDouble[0].c_str()));
+    double raw_decimal = static_cast<double>(atoi(oVecDouble[1].c_str()));
+    double power =  ceil(raw_decimal/10);
+    double decimal = raw_decimal/pow(10,power);
+    value += decimal;
+    return value;
+
+}
+
 using namespace model_api;
 
 InputDataset::~InputDataset() {}                        ///< Destructor
@@ -138,44 +165,67 @@ void InputDataset::testModel(const nda& oFMTest,const nda& oPTest, std::vector<P
         pyTuple oTuple = static_cast<pyTuple>(oResults);
 
         /**
-         * Provisorial implementation
+         * BEGIN: Provisorial implementation
         */
         int size = py::extract<int>(oTuple[0]);
 
-        for( int i = 1; i < size ; ++i )
+
+        for( int i = 1; i < size+1 ; ++i )
         {
 
-            double metric = py::extract<double>(oTuple[i]);
-
+            const char* strValue = py::extract<const char*>(py::str(oTuple[i]));
             switch (i)
             {
-            case 1:
-                oPMList.push_back(TruePositive(metric));
-                break;
-            case 2:
-                oPMList.push_back(TrueNegative(metric));
-                break;
-            case 3:
-                oPMList.push_back(FalsePostive(metric));
-                break;
-            case 4:
-                oPMList.push_back(FalseNegative(metric));
-                break;
-            case 5:
-                oPMList.push_back(Recall(metric));
-                break;
-            case 6:
-                oPMList.push_back(Precision(metric));
-                break;
-            case 7:
-                oPMList.push_back(F1Score(metric));
-                break;
+                case 1:
+                {
+                    double metric = static_cast<double>(atoi(strValue));
+                    oPMList.push_back(TruePositive(metric));
+                    break;
+                }
+                case 2:
+                {   
+                    double metric = static_cast<double>(atoi(strValue));
+                    oPMList.push_back(TrueNegative(metric));
+                    break;
+                }            
+                case 3:
+                {
+                    double metric = static_cast<double>(atoi(strValue));
+                    oPMList.push_back(FalsePostive(metric));
+                    break;
+
+                }
+                case 4:
+                {
+                    double metric = static_cast<double>(atoi(strValue));
+                    oPMList.push_back(FalseNegative(metric));
+                    break;
+                }                    
+                case 5:
+                {
+                    double metric = getDoubleValue(strValue);
+                    oPMList.push_back(Recall(metric));
+                    break;
+                }
+                case 6:
+                {
+                    double metric = getDoubleValue(strValue);
+                    oPMList.push_back(Precision(metric));
+                    break;
+                }                
+                case 7:
+                {
+                    double metric = getDoubleValue(strValue);
+                    oPMList.push_back(F1Score(metric));
+                    break;
+                }
+                
             }
 
         } 
 
         /**
-         * Provisorial implementation
+         * END: Provisorial implementation
         */
 
     } catch ( const py::error_already_set& )
