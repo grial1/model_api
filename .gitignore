@@ -43,3 +43,6 @@ include/test
 
 # Doxygen config
 Doxyfile
+
+# Python bytecode
+*.pyc
