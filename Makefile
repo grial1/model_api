@@ -17,6 +17,7 @@ example: $(PROG).o $(PROG).bin
 
 model:
 	$(MAKE) -C src/module
+	$(MAKE) -C src/module_2
 
 Dataset.o:
 	$(CXX) -fPIC -c -o obj/$@ src/Dataset.cc $(CXXFLAGS)
@@ -38,16 +39,19 @@ $(PROG).o:$(PROG).cc
 
 $(PROG).bin: $(PROG).o
 	$(CXX) obj/$< $(CXXFLAGS) $(LIB) -lInputDataset -o $@
-	./example.bin
+	@if [ "$(EXAMPLE)" = "1" ];\
+	then\
+		./example.bin 0;\
+	elif [ "$(EXAMPLE)" = "2" ];\
+	then\
+		./example.bin 1;\
+	fi
 
 clean:
 	rm -rf obj/*.o
 	rm -rf *.bin
 	rm -rf *.so
 	rm -rf build
-
-run:
-	./$(PROG).bin
 
 $(TEST):$(PROG).cc
 	$(CXX) -g -c -o obj/Dataset.o src/Dataset.cc $(CXXFLAGS)

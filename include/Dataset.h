@@ -9,6 +9,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 #include <boost/python.hpp>
 #include <boost/python/numpy.hpp>
 

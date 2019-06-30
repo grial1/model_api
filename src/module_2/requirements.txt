@@ -1,0 +1,4 @@
+### REQUIREMENTS DO NOT TAKE INTO ACCOUNT ABT API ###
+numpy==1.15.2
+tensorflow
+# matplotlib==3.0.0

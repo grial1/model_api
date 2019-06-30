@@ -14,8 +14,10 @@ C++ library for wrapping Python3 predictive models (e.g based in scikit-learn or
 ```
     $ make
     $ sudo make install
-    # For testing
-    $ make example
+    # For testing predictive model induced with scikit-learn's K-NN
+    $ make example EXAMPLE=1
+    # For testing predictive model induced with tensorflow's K-NN
+    $ make example EXAMPLE=2
 ```
 
 ## API documentation

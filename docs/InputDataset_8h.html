@@ -74,9 +74,13 @@ $(function() {
 <p>API to communicate with predictive model implemented in Python.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;exception&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 <code>#include &lt;boost/python/object.hpp&gt;</code><br />
 <code>#include &lt;boost/python/import.hpp&gt;</code><br />
 <code>#include &quot;<a class="el" href="Dataset_8h_source.html">Dataset.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="evaluation_8h_source.html">evaluation.h</a>&quot;</code><br />
+<code>#include &quot;utils/jsonparser_impl.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for InputDataset.h:</div>
 <div class="dyncontent">
@@ -103,6 +107,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:afc5ab457edbb2dc15559bc158ac2e1a2"><td class="memItemLeft" align="right" valign="top"><a id="afc5ab457edbb2dc15559bc158ac2e1a2"></a>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>pyObject</b> = py::object</td></tr>
 <tr class="separator:afc5ab457edbb2dc15559bc158ac2e1a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ca23c7723f3beb19a61cf29668f257"><td class="memItemLeft" align="right" valign="top"><a id="a60ca23c7723f3beb19a61cf29668f257"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>pyTuple</b> = py::tuple</td></tr>
+<tr class="separator:a60ca23c7723f3beb19a61cf29668f257"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>API to communicate with predictive model implemented in Python. </p>

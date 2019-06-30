@@ -9,12 +9,17 @@
 #pragma once
 
 #include <exception>
+#include <vector>
+#include <string>
 #include <boost/python/object.hpp>
 #include <boost/python/import.hpp>
 #include "Dataset.h"
+#include "evaluation.h"
+#include "utils/jsonparser_impl.h"
 
 namespace py = boost::python;
 using pyObject = py::object;
+using pyTuple = py::tuple;
 
 /// @namespace model_api
 /// @brief Namespace that gathers all the API classes
@@ -27,25 +32,32 @@ namespace model_api
     {
 
         public:
-            InputDataset()=delete;                                  ///< Delete default construtor
-            ~InputDataset();                                        ///< Destructor
+            InputDataset()=delete;                                      ///< Delete default construtor
+            ~InputDataset();                                            ///< Destructor
             /// @param oFM ndarray with data instances
-            InputDataset(nda& oFM);                                 ///< Copy constructor
+            InputDataset(nda& oFM);                                     ///< constructor
             /// @param oFM ndarray with data instances
-            InputDataset(nda&& oFM);                                ///< Move constructor
+            /// @param oJsonConfig Python module configuration
+            InputDataset(nda& oFM, Json& oJsonConfig);                  ///< constructor
             /// @param oFM ndarray with data instances
-            void operator=(nda& oFM);                               ///< Copy assigment operator
+            InputDataset(nda&& oFM);                                    ///< constructor
             /// @param oFM ndarray with data instances
-            void operator=(nda&& oFM);                              ///< Move assigment operator
+            void operator=(nda& oFM);                                   ///< Copy assigment operator
+            /// @param oFM ndarray with data instances
+            void operator=(nda&& oFM);                                  ///< Move assigment operator
             /// @return ndarray with data instances
-            nda& getFileMatrix() const;                             ///< Accessor method
+            nda& getFileMatrix() const;                                 ///< Accessor method
             /// @param oFM ndarray with data instances
-            void setFileMatrix(nda& oFM);                           ///< Mutator method
+            void setFileMatrix(nda& oFM);                               ///< Mutator method
             /// @param out ndarray with predictions (one entry for each row in oFM)
-            void predict(nda& out);                                 ///< Make prediction from filesmatrix
+            void predict(nda& out);                                     ///< Make prediction from filesmatrix
             /// @param oFMTrain ndarray with train data instances
             /// @param oPTrain ndarray with train predictions (used for supervised learning)
-            void initModel(const nda& oFMTrain,const nda& oPTrain); ///< Initilize model and train, in case is neccessary
+            void initModel(const nda& oFMTrain,const nda& oPTrain);     ///< Initilize model and train, in case is neccessary
+            /// @param oFMTest input data instances for testing the model
+            /// @param oPTest Predictions of the tests dataset
+            /// @param oPMList list of metrics to be returned
+            void testModel(const nda& oFMTest,const nda& oPTest, std::vector<PerformaceMetric>& oPMList);  ///< Method that returns a list of evaluation metrics from a tested model
     
         private:
             pyObject oModel; ///< Instance of model.Model class

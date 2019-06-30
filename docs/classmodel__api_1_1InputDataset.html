@@ -97,6 +97,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a31f12b83db2195f609dfc8af27cdbc58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fd9fc18bbd147d612acb16a808a135c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel__api_1_1InputDataset.html#a5fd9fc18bbd147d612acb16a808a135c">InputDataset</a> (nda &amp;oFM)</td></tr>
 <tr class="separator:a5fd9fc18bbd147d612acb16a808a135c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1743888ce461e7fa367ee6d2aad70082"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel__api_1_1InputDataset.html#a1743888ce461e7fa367ee6d2aad70082">InputDataset</a> (nda &amp;oFM, Json &amp;oJsonConfig)</td></tr>
+<tr class="separator:a1743888ce461e7fa367ee6d2aad70082"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a213885343387992b05a173ecb70a628f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel__api_1_1InputDataset.html#a213885343387992b05a173ecb70a628f">InputDataset</a> (nda &amp;&amp;oFM)</td></tr>
 <tr class="separator:a213885343387992b05a173ecb70a628f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59c9f5a14675794a67ef0eafa7550d8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel__api_1_1InputDataset.html#a59c9f5a14675794a67ef0eafa7550d8d">operator=</a> (nda &amp;oFM)</td></tr>
@@ -110,8 +112,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af25824b44f866ff2b03e5d1036d7215a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel__api_1_1InputDataset.html#af25824b44f866ff2b03e5d1036d7215a">predict</a> (nda &amp;out)</td></tr>
 <tr class="separator:af25824b44f866ff2b03e5d1036d7215a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7d130afc8889825573e738906397714"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel__api_1_1InputDataset.html#af7d130afc8889825573e738906397714">initModel</a> (const nda &amp;oFMTrain, const nda &amp;oPTrain)</td></tr>
-<tr class="memdesc:af7d130afc8889825573e738906397714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initilize model and train, in case is neccessary.  <a href="#af7d130afc8889825573e738906397714">More...</a><br /></td></tr>
 <tr class="separator:af7d130afc8889825573e738906397714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0829ebb09eca7632e7032f40d451c70d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel__api_1_1InputDataset.html#a0829ebb09eca7632e7032f40d451c70d">testModel</a> (const nda &amp;oFMTest, const nda &amp;oPTest, std::vector&lt; <a class="el" href="structPerformaceMetric.html">PerformaceMetric</a> &gt; &amp;oPMList)</td></tr>
+<tr class="memdesc:a0829ebb09eca7632e7032f40d451c70d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that returns a list of evaluation metrics from a tested model.  <a href="#a0829ebb09eca7632e7032f40d451c70d">More...</a><br /></td></tr>
+<tr class="separator:a0829ebb09eca7632e7032f40d451c70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classmodel__api_1_1Dataset"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classmodel__api_1_1Dataset')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classmodel__api_1_1Dataset.html">model_api::Dataset</a></td></tr>
 <tr class="memitem:af3bb5174dc26a002453038644d0d92c8 inherit pub_methods_classmodel__api_1_1Dataset"><td class="memItemLeft" align="right" valign="top"><a id="af3bb5174dc26a002453038644d0d92c8"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmodel__api_1_1Dataset.html#af3bb5174dc26a002453038644d0d92c8">Dataset</a> ()=delete</td></tr>
@@ -153,7 +157,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a5fd9fc18bbd147d612acb16a808a135c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fd9fc18bbd147d612acb16a808a135c">&#9670;&nbsp;</a></span>InputDataset() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fd9fc18bbd147d612acb16a808a135c">&#9670;&nbsp;</a></span>InputDataset() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,7 +173,42 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">oFM</td><td>ndarray with data instances Copy constructor </td></tr>
+    <tr><td class="paramname">oFM</td><td>ndarray with data instances constructor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1743888ce461e7fa367ee6d2aad70082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1743888ce461e7fa367ee6d2aad70082">&#9670;&nbsp;</a></span>InputDataset() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">model_api::InputDataset::InputDataset </td>
+          <td>(</td>
+          <td class="paramtype">nda &amp;&#160;</td>
+          <td class="paramname"><em>oFM</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Json &amp;&#160;</td>
+          <td class="paramname"><em>oJsonConfig</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oFM</td><td>ndarray with data instances </td></tr>
+    <tr><td class="paramname">oJsonConfig</td><td>Python module configuration constructor </td></tr>
   </table>
   </dd>
 </dl>
@@ -177,7 +216,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a213885343387992b05a173ecb70a628f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a213885343387992b05a173ecb70a628f">&#9670;&nbsp;</a></span>InputDataset() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a213885343387992b05a173ecb70a628f">&#9670;&nbsp;</a></span>InputDataset() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,7 +232,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">oFM</td><td>ndarray with data instances Move constructor </td></tr>
+    <tr><td class="paramname">oFM</td><td>ndarray with data instances constructor </td></tr>
   </table>
   </dd>
 </dl>
@@ -254,12 +293,10 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Initilize model and train, in case is neccessary. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">oFMTrain</td><td>ndarray with train data instances </td></tr>
-    <tr><td class="paramname">oPTrain</td><td>ndarray with train predictions (used for supervised learning) </td></tr>
+    <tr><td class="paramname">oPTrain</td><td>ndarray with train predictions (used for supervised learning) Initilize model and train, in case is neccessary </td></tr>
   </table>
   </dd>
 </dl>
@@ -379,6 +416,50 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Reimplemented from <a class="el" href="classmodel__api_1_1Dataset.html#a50e8c50a3b45cb39cf4403ebfdc1c2dc">model_api::Dataset</a>.</p>
+
+</div>
+</div>
+<a id="a0829ebb09eca7632e7032f40d451c70d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0829ebb09eca7632e7032f40d451c70d">&#9670;&nbsp;</a></span>testModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void model_api::InputDataset::testModel </td>
+          <td>(</td>
+          <td class="paramtype">const nda &amp;&#160;</td>
+          <td class="paramname"><em>oFMTest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const nda &amp;&#160;</td>
+          <td class="paramname"><em>oPTest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structPerformaceMetric.html">PerformaceMetric</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>oPMList</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Method that returns a list of evaluation metrics from a tested model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">oFMTest</td><td>input data instances for testing the model </td></tr>
+    <tr><td class="paramname">oPTest</td><td>Predictions of the tests dataset </td></tr>
+    <tr><td class="paramname">oPMList</td><td>list of metrics to be returned </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
