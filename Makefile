@@ -38,7 +38,13 @@ $(PROG).o:$(PROG).cc
 
 $(PROG).bin: $(PROG).o
 	$(CXX) obj/$< $(CXXFLAGS) $(LIB) -lInputDataset -o $@
-	./example.bin
+	@if [ "$(EXAMPLE)" = "1" ];\
+	then\
+		./example.bin 0;\
+	elif [ "$(EXAMPLE)" = "2" ];\
+	then\
+		./example.bin 1;\
+	fi
 
 clean:
 	rm -rf obj/*.o

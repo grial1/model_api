@@ -15,6 +15,7 @@
 #include <boost/python/import.hpp>
 #include "Dataset.h"
 #include "evaluation.h"
+#include "utils/jsonparser_impl.h"
 
 namespace py = boost::python;
 using pyObject = py::object;
@@ -34,9 +35,12 @@ namespace model_api
             InputDataset()=delete;                                      ///< Delete default construtor
             ~InputDataset();                                            ///< Destructor
             /// @param oFM ndarray with data instances
-            InputDataset(nda& oFM);                                     ///< Copy constructor
+            InputDataset(nda& oFM);                                     ///< constructor
             /// @param oFM ndarray with data instances
-            InputDataset(nda&& oFM);                                    ///< Move constructor
+            /// @param oJsonConfig Python module configuration
+            InputDataset(nda& oFM, Json& oJsonConfig);                  ///< constructor
+            /// @param oFM ndarray with data instances
+            InputDataset(nda&& oFM);                                    ///< constructor
             /// @param oFM ndarray with data instances
             void operator=(nda& oFM);                                   ///< Copy assigment operator
             /// @param oFM ndarray with data instances

@@ -6,7 +6,7 @@
 using namespace std;
 
 static inline 
-void splitString(const string& str, vector<string>& output, char delim = ' ')
+void getNumbers(const string& str, vector<string>& output, char delim = ' ')
 {
     stringstream ss(str);
     string token;
@@ -20,7 +20,7 @@ double getDoubleValue(const char* element)
 {
 
     vector<string> oVecDouble;
-    splitString(string{element},oVecDouble,'.');
+    getNumbers(string{element},oVecDouble,'.');
     double value = static_cast<double>(atoi(oVecDouble[0].c_str()));
     double raw_decimal = static_cast<double>(atoi(oVecDouble[1].c_str()));
     double power =  ceil(raw_decimal/10);
@@ -42,7 +42,7 @@ InputDataset::InputDataset( nda& oFM ) : Dataset{oFM} {
     try
     {
     
-        pyObject model = py::import("model");
+        pyObject model = py::import("model");   ///< Import default module
         this->oModel = model.attr("Model")();
 
     } catch (const py::error_already_set& )
@@ -55,9 +55,32 @@ InputDataset::InputDataset( nda& oFM ) : Dataset{oFM} {
 
 }           ///< Copy constructor
 
+
+InputDataset::InputDataset(nda& oFM, Json& oJsonConfig) : Dataset{oFM}
+{
+
+    setenv("PYTHONPATH", ".", 1);   ///< Allow Python to load modules from the current directory
+    Py_Initialize();                ///< Initialize Python
+    try
+    {
+        py::str oModule{oJsonConfig.get("module")};
+        pyObject model = py::import(oModule);   ///< Import config module
+        this->oModel = model.attr("Model")();
+
+    } catch (const py::error_already_set& )
+    {
+
+        PyErr_Print();
+        throw std::runtime_error("Error when using Model");
+
+    }
+
+}
+
 InputDataset::InputDataset(nda&& oFM) : Dataset{oFM} {}          ///< Move constructor
 
-void InputDataset::operator=(nda& oFM) {
+void InputDataset::operator=(nda& oFM) 
+{
 
     Dataset::operator=(oFM);
     setenv("PYTHONPATH", ".", 1);   ///< Allow Python to load modules from the current directory

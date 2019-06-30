@@ -9,7 +9,6 @@ init:
 
 install:
 	sudo ./setup.py install 
-	# --install-base $${HOME}/.local
 
 test:
 	./setup.py test
