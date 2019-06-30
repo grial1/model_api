@@ -1,4 +1,6 @@
 # model_api
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/grial1/model_api.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/grial1/model_api/alerts/)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/grial1/model_api.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/grial1/model_api/context:python)
 
 C++ library for wrapping Python3 predictive models (e.g based in scikit-learn or tensorflow). The code in this repo. is part of the implementation of a light stream processing application to analyze system's logs (some kind of HIDS) that is currently in development.
 
