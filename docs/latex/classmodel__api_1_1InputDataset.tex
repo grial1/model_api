@@ -27,6 +27,8 @@ Collaboration diagram for model\+\_\+api\+:\+:Input\+Dataset\+:
 \item 
 \hyperlink{classmodel__api_1_1InputDataset_a5fd9fc18bbd147d612acb16a808a135c}{Input\+Dataset} (nda \&o\+FM)
 \item 
+\hyperlink{classmodel__api_1_1InputDataset_a1743888ce461e7fa367ee6d2aad70082}{Input\+Dataset} (nda \&o\+FM, Json \&o\+Json\+Config)
+\item 
 \hyperlink{classmodel__api_1_1InputDataset_a213885343387992b05a173ecb70a628f}{Input\+Dataset} (nda \&\&o\+FM)
 \item 
 void \hyperlink{classmodel__api_1_1InputDataset_a59c9f5a14675794a67ef0eafa7550d8d}{operator=} (nda \&o\+FM)
@@ -59,23 +61,36 @@ A\+PI class that represents an input data set of unknows to be predicted.
 Destructor \mbox{\Hypertarget{classmodel__api_1_1InputDataset_a5fd9fc18bbd147d612acb16a808a135c}\label{classmodel__api_1_1InputDataset_a5fd9fc18bbd147d612acb16a808a135c}} 
 \index{model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}!Input\+Dataset@{Input\+Dataset}}
 \index{Input\+Dataset@{Input\+Dataset}!model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}}
-\subsubsection{\texorpdfstring{Input\+Dataset()}{InputDataset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{Input\+Dataset()}{InputDataset()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily model\+\_\+api\+::\+Input\+Dataset\+::\+Input\+Dataset (\begin{DoxyParamCaption}\item[{nda \&}]{o\+FM }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
-{\em o\+FM} & ndarray with data instances Copy constructor \\
+{\em o\+FM} & ndarray with data instances constructor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmodel__api_1_1InputDataset_a1743888ce461e7fa367ee6d2aad70082}\label{classmodel__api_1_1InputDataset_a1743888ce461e7fa367ee6d2aad70082}} 
+\index{model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}!Input\+Dataset@{Input\+Dataset}}
+\index{Input\+Dataset@{Input\+Dataset}!model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}}
+\subsubsection{\texorpdfstring{Input\+Dataset()}{InputDataset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily model\+\_\+api\+::\+Input\+Dataset\+::\+Input\+Dataset (\begin{DoxyParamCaption}\item[{nda \&}]{o\+FM,  }\item[{Json \&}]{o\+Json\+Config }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em o\+FM} & ndarray with data instances \\
+\hline
+{\em o\+Json\+Config} & Python module configuration constructor \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classmodel__api_1_1InputDataset_a213885343387992b05a173ecb70a628f}\label{classmodel__api_1_1InputDataset_a213885343387992b05a173ecb70a628f}} 
 \index{model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}!Input\+Dataset@{Input\+Dataset}}
 \index{Input\+Dataset@{Input\+Dataset}!model\+\_\+api\+::\+Input\+Dataset@{model\+\_\+api\+::\+Input\+Dataset}}
-\subsubsection{\texorpdfstring{Input\+Dataset()}{InputDataset()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{Input\+Dataset()}{InputDataset()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily model\+\_\+api\+::\+Input\+Dataset\+::\+Input\+Dataset (\begin{DoxyParamCaption}\item[{nda \&\&}]{o\+FM }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
-{\em o\+FM} & ndarray with data instances Move constructor \\
+{\em o\+FM} & ndarray with data instances constructor \\
 \hline
 \end{DoxyParams}
 

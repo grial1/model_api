@@ -25,4 +25,21 @@ digraph "include/InputDataset.h"
   Node9 [label="evaluation.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$evaluation_8h.html",tooltip="abstract class to be extended and implemented by InputDataset "];
   Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
   Node10 [label="ostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node0 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="utils/jsonparser_impl.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node0 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="/home/grial/Documents\l/git/model_api/include\l/utils/jsonparser.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node0 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="utility",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node0 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node0 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="fstream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node0 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="sstream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node0 -> Node16 [color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="typeinfo",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node0 -> Node17 [color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="cstring",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node0 -> Node18 [color="midnightblue",fontsize="10",style="solid"];
+  Node18 [label="cmath",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
 }
