@@ -63,7 +63,8 @@ InputDataset::InputDataset(nda& oFM, Json& oJsonConfig) : Dataset{oFM}
     Py_Initialize();                ///< Initialize Python
     try
     {
-        py::str oModule{oJsonConfig.get("module")};
+        std::string sModuleName = oJsonConfig.get("module");
+        py::str oModule{sModuleName.substr(1, sModuleName.length()-2)};
         pyObject model = py::import(oModule);   ///< Import config module
         this->oModel = model.attr("Model")();
 

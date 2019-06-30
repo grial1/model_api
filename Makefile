@@ -17,6 +17,7 @@ example: $(PROG).o $(PROG).bin
 
 model:
 	$(MAKE) -C src/module
+	$(MAKE) -C src/module_2
 
 Dataset.o:
 	$(CXX) -fPIC -c -o obj/$@ src/Dataset.cc $(CXXFLAGS)
@@ -51,9 +52,6 @@ clean:
 	rm -rf *.bin
 	rm -rf *.so
 	rm -rf build
-
-run:
-	./$(PROG).bin
 
 $(TEST):$(PROG).cc
 	$(CXX) -g -c -o obj/Dataset.o src/Dataset.cc $(CXXFLAGS)

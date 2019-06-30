@@ -36,7 +36,9 @@ int main(int argc, char** argv)
     if (argc < 2 || atoi(argv[1]) == 0)
     {
 
-        ma::InputDataset oID{oFileMatExample};
+        Json oJsonConfig; oJsonConfig = std::string{"{\"module\":\"model\"}"};
+        ma::InputDataset oID{oFileMatExample,oJsonConfig};
+        //ma::InputDataset oID{oFileMatExample};
 
         cout << py::extract<const char*>(py::str(oID.getFileMatrix())) << endl;
 
