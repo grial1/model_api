@@ -9,15 +9,11 @@ LIB= -lpython3.6m -lboost_python3-py36 -lboost_numpy3-py36
 CXXFLAGS= $(INCLUDE) -std=c++11
 CXX=g++
 
-.PHONY:$(PROG).cc
+.PHONY: $(PROG).cc
 
-all: model $(OBJECTS) $(SHARED)
+all: $(OBJECTS) $(SHARED)
 
-example: $(PROG).o $(PROG).bin
-
-model:
-	$(MAKE) -C src/module
-	$(MAKE) -C src/module_2
+example: $(PROG).bin
 
 Dataset.o:
 	$(CXX) -fPIC -c -o obj/$@ src/Dataset.cc $(CXXFLAGS)
@@ -34,17 +30,14 @@ install:$(SHARED)
 	ldconfig -v
 	@echo "\n\tINSTALLATION FINISHED"
 
-$(PROG).o:$(PROG).cc
-	$(CXX) -c -o obj/$@ src/$< $(CXXFLAGS)
-
-$(PROG).bin: $(PROG).o
-	$(CXX) obj/$< $(CXXFLAGS) $(LIB) -lInputDataset -o $@
-	@if [ "$(EXAMPLE)" = "1" ];\
+$(PROG).bin: $(PROG).cc
+	$(CXX) src/$< $(CXXFLAGS) $(LIB) -lInputDataset -o $@
+	@if [ "$(EXAMPLE)" = "0" ];\
 	then\
-		./example.bin 0;\
-	elif [ "$(EXAMPLE)" = "2" ];\
+		$(MAKE) -C src/module_1;\
+	elif [ "$(EXAMPLE)" = "1" ];\
 	then\
-		./example.bin 1;\
+		$(MAKE) -C src/module_2;\
 	fi
 
 clean:
@@ -52,6 +45,8 @@ clean:
 	rm -rf *.bin
 	rm -rf *.so
 	rm -rf build
+	$(MAKE) -C src/module_1 clean
+	$(MAKE) -C src/module_2 clean
 
 $(TEST):$(PROG).cc
 	$(CXX) -g -c -o obj/Dataset.o src/Dataset.cc $(CXXFLAGS)
