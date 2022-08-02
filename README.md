@@ -33,7 +33,7 @@ C++ library for wrapping Python3 predictive models (e.g based in scikit-learn or
 ```
 
 ## API documentation
-Please refer to *[this page.](https://grial1.github.io/model_api/)*
+Please refer to *[this page.](https://rialg.github.io/model_api/)*
 
 ## Pending:
 
